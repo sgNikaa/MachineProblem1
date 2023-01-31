@@ -95,26 +95,26 @@ public class mainConvert {
 				if(e.getSource() == comboBox)
 		        {
 		            int state = e.getStateChange();
+
 		            if(state == ItemEvent.SELECTED)
 		            {
 		              String item = (String) comboBox.getSelectedItem();
+
 		              
-		              //If number system is binary
 		              if(item.equalsIgnoreCase("binary")) {
 		            	  
 		            	  try {
 		            		  Integer.parseInt(textField.getText(),2);
 		            		  
 		            		  lblNewLabel_3.setText(String.format("Decimal: %s", Integer.parseInt(textField.getText(),2)));
-				              lblNewLabel_4.setText(String.format("Hexadecimal: %s", Integer.toHexString(Integer.parseInt(textField.getText(),2))));
+				              lblNewLabel_4.setText(String.format("Hexadecimal: %s", Integer.toHexString(Integer.parseInt(textField.getText(),2)).toUpperCase()));
 				              lblNewLabel_5.setText(String.format("Octal: %s", Integer.toOctalString(Integer.parseInt(textField.getText(),2))));
 				              
 		            	  }catch (NumberFormatException error) {
 		            		  
-		            		  JOptionPane.showMessageDialog(frame,"Input must be in decimal format and not blank.");
+		            		  JOptionPane.showMessageDialog(frame,"Input must be in binary format and not blank.");
 		            		  
 		            	  }
-		            	//If number system is decimal
 		              }else if(item.equalsIgnoreCase("decimal")) {
 		            	  
 		            	  try {
@@ -122,7 +122,7 @@ public class mainConvert {
 		            		  Integer.parseInt(textField.getText());
 		            		  
 		            		  lblNewLabel_3.setText(String.format("Binary: %s", Integer.toBinaryString(Integer.parseInt(textField.getText()))));
-				              lblNewLabel_4.setText(String.format("Hexadecimal: %s", Integer.toHexString(Integer.parseInt(textField.getText()))));
+				              lblNewLabel_4.setText(String.format("Hexadecimal: %s", Integer.toHexString(Integer.parseInt(textField.getText())).toUpperCase()));
 				              lblNewLabel_5.setText(String.format("Octal: %s", Integer.toOctalString(Integer.parseInt(textField.getText()))));	
 		            		  
 		            	  }catch (NumberFormatException error){
@@ -131,7 +131,6 @@ public class mainConvert {
 		            		  
 		            	  }
 			          
-		            	//If number system is Hexadecimal
 		              }else if(item.equalsIgnoreCase("Hexadecimal")) {
 		            	  
 		            	  try {
@@ -147,7 +146,6 @@ public class mainConvert {
 		            		  
 		            	  }
 		            	  
-		            	  //If number system is octal
 		              }else if(item.equalsIgnoreCase("Octal")) {
 		            	  
 		            	  //test
@@ -155,7 +153,7 @@ public class mainConvert {
 		            		  
 		            		  Integer.parseInt(textField.getText(),8);
 		            		  lblNewLabel_3.setText(String.format("Binary: %s", Integer.toBinaryString(Integer.parseInt(textField.getText(),8))));
-		            		  lblNewLabel_5.setText(String.format("Hexadecimal: %s", Integer.toHexString(Integer.parseInt(textField.getText(),8))));
+		            		  lblNewLabel_5.setText(String.format("Hexadecimal: %s", Integer.toHexString(Integer.parseInt(textField.getText(),8)).toUpperCase()));
 				              lblNewLabel_4.setText(String.format("Decimal: %s", Integer.parseInt(textField.getText(),8)));
 				              
 		            	  } catch (NumberFormatException error) {
